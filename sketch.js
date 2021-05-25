@@ -30,11 +30,13 @@ function setup(){
 
 function draw(){
     // add condition to check if any background image is there to add
-    background("lightblue");
+    if(backgroundImg){
+        background(backgroundImg);
+    }
     Engine.update(engine);
 
     // write code to display time in correct format here
-    text("TIME RIGHT NOW IS : " +  hour() , 200,200);
+    text("TIME RIGHT NOW IS : " +  hour , 200,200);
     fill("Green");
     
 }
@@ -77,3 +79,4 @@ async function getBackgroundImg(){
     backgroundImg = loadImage(bg);
     //console.log(backgroundImg);
 }
+
